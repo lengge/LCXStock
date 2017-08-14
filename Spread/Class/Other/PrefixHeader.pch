@@ -1,0 +1,58 @@
+//
+//  PrefixHeader.pch
+//  Spread
+//
+//  Created by user on 17/5/27.
+//  Copyright © 2017年 user. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+
+#import "HexColors.h"
+#import "Masonry.h"
+#import "CocoaSecurity.h"
+#import <UIView+YYAdd.h>
+#import <YYCategoriesMacro.h>
+#import <CocoaLumberjack.h>
+#import "MBProgressHUD+MJ.h"
+#import "MBHUDHelper.h"
+
+#endif
+
+#define HEIGHT_STATUSBAR	20
+
+#define HEIGHT_TABBAR       49
+
+#define HEIGHT_NAVBAR       44
+
+#define SCREEN_W      ([UIScreen mainScreen].bounds.size.width)
+
+#define SCREEN_H      ([UIScreen mainScreen].bounds.size.height)
+
+#define SCREEN_WIDTH  (SCREEN_W < SCREEN_H ? SCREEN_W : SCREEN_H)
+
+#define SCREEN_HEIGHT (SCREEN_W < SCREEN_H ? SCREEN_H : SCREEN_W)
+
+#define kApplication        [UIApplication sharedApplication]
+
+#define kKeyWindow          [UIApplication sharedApplication].keyWindow
+
+#define kAppDelegate        [UIApplication sharedApplication].delegate
+
+#define kUserDefaults       [NSUserDefaults standardUserDefaults]
+
+#define kNotificationCenter [NSNotificationCenter defaultCenter]
+
+#define kAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+//!!DDLog 必须配置打印级别
+#ifdef DEBUG
+static const int ddLogLevel = DDLogLevelVerbose;
+#else
+static const int ddLogLevel = DDLogLevelWarning;
+#endif
+
+#endif /* PrefixHeader_pch */
